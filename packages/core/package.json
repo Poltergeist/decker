@@ -1,0 +1,32 @@
+{
+  "name": "@specone/core",
+  "version": "0.0.1",
+  "description": "core component library",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc -w",
+    "dist": "tsc"
+  },
+  "main": "dist/index",
+  "typings": "dist/index",
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+    "emotion": "^9.2.6",
+    "react-emotion": "^9.2.6",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2"
+  },
+  "devDependencies": {
+    "@types/react": "^16.4.7",
+    "@types/react-dom": "^16.0.6",
+    "emotion": "^9.2.6",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-emotion": "^9.2.6",
+    "typescript": "^3.0.1"
+  },
+  "dependencies": {
+    "@material-ui/core": "^1.4.2"
+  }
+}

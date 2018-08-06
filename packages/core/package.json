@@ -1,6 +1,6 @@
 {
   "name": "@specone/core",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "core component library",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -28,5 +28,6 @@
   },
   "dependencies": {
     "@material-ui/core": "^1.4.2"
-  }
+  },
+  "gitHead": "126b56d9797e908f1301e1bb9ffb77ffbe574895"
 }

@@ -3,7 +3,12 @@ import * as React from "react";
 import { Input } from "@specone/core";
 import { css } from "emotion";
 
-import { Observable } from "@reactivex/rxjs";
+import { BehaviorSubject, Observable } from "@reactivex/rxjs";
+
+import { componentFromStream } from "recompose";
+
+import CardGrid from "./CardGrid";
+const cards$ = new BehaviorSubject([]);
 
 const handle: React.FormEventHandler<HTMLFormElement> = event => {
   event.preventDefault();
@@ -16,8 +21,14 @@ const handle: React.FormEventHandler<HTMLFormElement> = event => {
   ).flatMap(response => {
     return response.json();
   });
-  result.subscribe(x => console.log(x), e => console.error(e));
+  result.subscribe(x => cards$.next(x.data), e => console.error(e));
 };
+
+const Component = componentFromStream(props$ => {
+  return Observable.combineLatest([cards$]).map(([cards = []], index) => {
+    return <CardGrid key={index} cards={cards} />;
+  });
+});
 
 class App extends React.Component {
   public render() {
@@ -26,14 +37,17 @@ class App extends React.Component {
     `;
     return (
       <div className="App">
-        <form onSubmit={handle}>
-          <Input
-            id="search"
-            className={className}
-            name="search"
-            label="Search card"
-          />
-        </form>
+        <div>
+          <form onSubmit={handle}>
+            <Input
+              id="search"
+              className={className}
+              name="search"
+              label="Search card"
+            />
+          </form>
+        </div>
+        <Component />
       </div>
     );
   }

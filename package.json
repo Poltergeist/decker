@@ -9,8 +9,5 @@
   "devDependencies": {
     "lerna": "^3.0.0-rc.0"
   },
-  "dependencies": {
-    "rxjs": "^6.2.2",
-    "rxjs-compat": "^6.2.2"
-  }
+  "dependencies": {}
 }

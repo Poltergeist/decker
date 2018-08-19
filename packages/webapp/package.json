@@ -3,13 +3,16 @@
   "version": "0.0.3",
   "private": true,
   "dependencies": {
-    "@reactivex/rxjs": "^6.2.2",
     "@specone/core": "^0.0.3",
+    "@types/pouchdb": "6.3.2",
     "@types/recompose": "^0.26.3",
+    "pouchdb": "7.0.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-scripts-ts": "2.16.0",
-    "recompose": "^0.28.1"
+    "recompose": "^0.28.1",
+    "rxjs": "6.2.2",
+    "rxjs-compat": "6.2.2"
   },
   "scripts": {
     "start": "react-scripts-ts start",

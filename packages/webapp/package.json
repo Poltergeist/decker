@@ -6,12 +6,10 @@
     "@reactivex/rxjs": "^6.2.2",
     "@specone/core": "^0.0.3",
     "@types/recompose": "^0.26.3",
-    "pouchdb-adapter-idb": "^7.0.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-scripts-ts": "2.16.0",
-    "recompose": "^0.28.1",
-    "rxdb": "^7.7.1"
+    "recompose": "^0.28.1"
   },
   "scripts": {
     "start": "react-scripts-ts start",

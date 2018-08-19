@@ -7,9 +7,6 @@ import { BehaviorSubject, Observable } from "@reactivex/rxjs";
 
 import { componentFromStream } from "recompose";
 
-import * as Database from "./Database";
-
-import { Subscription } from "@reactivex/rxjs/dist/package/Subscription";
 import CardGrid from "./CardGrid";
 const cards$ = new BehaviorSubject([]);
 
@@ -34,33 +31,6 @@ const Component = componentFromStream(props$ => {
 });
 
 class App extends React.Component {
-  public subs: Subscription[] = [];
-  constructor(props: any) {
-    super(props);
-  }
-  public async componentDidMount() {
-    const db = await Database.get();
-
-    if (db.heroes) {
-      const sub = db.heroes
-        .find()
-        .sort({ name: 1 })
-        .$.subscribe(
-          (heroes: any): void => {
-            if (!heroes) {
-              return;
-            }
-            console.log("reload heroes-list ");
-            console.dir(heroes);
-            this.setState({ heroes });
-          }
-        );
-      this.subs.push(sub);
-    }
-  }
-  public componentWillUnmount() {
-    this.subs.forEach((sub: Subscription) => sub.unsubscribe());
-  }
   public render() {
     const className = css`
       width: 100%;

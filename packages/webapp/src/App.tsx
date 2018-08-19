@@ -4,7 +4,19 @@ import { Input } from "@specone/core";
 import { css } from "emotion";
 
 import { BehaviorSubject, Observable } from "rxjs-compat";
-
+import { cardsDB } from "./Databases";
+cardsDB
+  .changes({ since: "now", include_docs: true })
+  .on("change", change => {
+    console.log(
+      cardsDB.query("index", {
+        include_docs: true,
+        key: "123"
+      })
+    );
+  })
+  .on("error", error => console.error(error));
+cardsDB.put({ _id: Date.now() + "", name: "123" });
 import { componentFromStream } from "recompose";
 
 import CardGrid from "./CardGrid";

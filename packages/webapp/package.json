@@ -5,7 +5,6 @@
   "dependencies": {
     "@reactivex/rxjs": "^6.2.2",
     "@specone/core": "^0.0.3",
-    "@types/pouchdb-adapter-idb": "^6.1.2",
     "@types/recompose": "^0.26.3",
     "pouchdb-adapter-idb": "^7.0.0",
     "react": "^16.4.2",

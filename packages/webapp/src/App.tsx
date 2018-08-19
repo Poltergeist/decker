@@ -3,7 +3,7 @@ import * as React from "react";
 import { Input } from "@specone/core";
 import { css } from "emotion";
 
-import { BehaviorSubject, Observable } from "@reactivex/rxjs";
+import { BehaviorSubject, Observable } from "rxjs-compat";
 
 import { componentFromStream } from "recompose";
 
@@ -47,7 +47,13 @@ class App extends React.Component {
             />
           </form>
         </div>
-        <Component />
+        <div
+          className={css`
+            padding: 16px 0;
+          `}
+        >
+          <Component />
+        </div>
       </div>
     );
   }
